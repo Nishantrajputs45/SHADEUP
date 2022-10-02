@@ -4,9 +4,15 @@ function hexFindbtn() {}
 
 function RGBFindbtn() {}
 
-function RangeSelector() {}
+function RangeSelector() {
+  const RrInput = document.querySelector("#RrInput").value;
+  const GrInput = document.querySelector("#GrInput").value;
+  const BrInput = document.querySelector("#BrInput").value;
+  const range_color_box = document.querySelector("#range-color-box");
 
-// hex to rgb converter
+  range_color_box.innerText =
+    "RGB" + "(" + RrInput + "," + GrInput + "," + BrInput + ")";
+}
 
 String.prototype.convertToRGB = function () {
   var aRgbHex = this.match(/.{1,2}/g);
