@@ -1,4 +1,25 @@
-function randompickerbtn() {}
+function randompickerbtn() {
+  const randomPicker = document.querySelector("#randomPicker");
+  const randomValuePara = document.querySelector("#randomValuePara");
+
+  randomPicker.removeChild(randomValuePara);
+  const letters = "0123456789ABCDEF";
+
+  const p = document.createElement("p");
+  p.id = "randomValuePara";
+  p.classList.add("random-value-para");
+  p.innerText = randomColor(letters);
+  randomPicker.appendChild(p);
+  randomPicker.style.backgroundColor = randomColor(letters);
+}
+
+function randomColor(letters) {
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color = color + letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
 
 function hexFindbtn() {
   const hexInput = document.querySelector("#hexInput");
