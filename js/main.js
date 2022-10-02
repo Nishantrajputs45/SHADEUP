@@ -27,4 +27,16 @@ function hexConvbtn() {
   hexCOut.innerText = rgb;
 }
 
-function rgbConvbtn() {}
+function rgbConvbtn() {
+  const RCInput = Number(document.querySelector("#RCInput").value);
+  const GCInput = Number(document.querySelector("#GCInput").value);
+  const BCInput = Number(document.querySelector("#BCInput").value);
+  const rgbCOut = document.querySelector("#rgbCOut");
+
+  rgbCOut.innerText = toHex(RCInput) + toHex(GCInput) + toHex(BCInput);
+}
+
+function toHex(rgbCVal) {
+  let hexValue = rgbCVal.toString(16);
+  return hexValue;
+}
