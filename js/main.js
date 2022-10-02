@@ -1,8 +1,21 @@
 function randompickerbtn() {}
 
-function hexFindbtn() {}
+function hexFindbtn() {
+  const hexInput = document.querySelector("#hexInput");
+  const color_box = document.querySelector("#color-box");
 
-function RGBFindbtn() {}
+  color_box.style.backgroundColor = hexInput.value;
+}
+
+function RGBFindbtn() {
+  const RInput = document.querySelector("#RInput").value;
+  const GInput = document.querySelector("#GInput").value;
+  const BInput = document.querySelector("#BInput").value;
+  const rgb_color_box = document.querySelector("#rgb-color-box");
+
+  rgb_color_box.style.backgroundColor =
+    "rgb" + "(" + RInput + "," + GInput + "," + BInput + ")".toString();
+}
 
 function RangeSelector() {
   const RrInput = document.querySelector("#RrInput").value;
@@ -10,8 +23,8 @@ function RangeSelector() {
   const BrInput = document.querySelector("#BrInput").value;
   const range_color_box = document.querySelector("#range-color-box");
 
-  range_color_box.innerText =
-    "RGB" + "(" + RrInput + "," + GrInput + "," + BrInput + ")";
+  range_color_box.style.backgroundColor =
+    "rgb" + "(" + RrInput + "," + GrInput + "," + BrInput + ")".toString();
 }
 
 String.prototype.convertToRGB = function () {
